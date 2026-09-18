@@ -1,1 +1,445 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadya Bhadauriya | Portfolio</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .hero .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .hero .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Objective */
+        .objective-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        /* Experience & Education Timelines */
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .date-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .card-body {
+            margin-top: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--white);
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* List Styling */
+        ul.custom-list {
+            list-style-type: none;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.custom-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be expanded into a mobile menu */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Aadya Bhadauriya</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Aadya Bhadauriya</h1>
+        <p class="subtitle">Psychology Student | Basketball Athlete & Coach | Event Manager</p>
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> <a href="mailto:aadyabhadauriya@gmail.com">aadyabhadauriya@gmail.com</a></span>
+            <span><i class="fas fa-phone"></i> +91 8756539041</span>
+            <span><i class="fas fa-location-dot"></i> Greater Noida, India</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Career Objective -->
+        <section id="about">
+            <h2 class="section-title">Career Objective</h2>
+            <div class="objective-card">
+                <p>To build a career combining psychology, basketball, and management, where I can work with people, learn continuously, and contribute meaningfully. I want to understand people, support teams, and use my skills to create a positive impact.</p>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Youth Basketball Coach</div>
+                            <div class="card-subtitle">Dribbling Drills Academy, Noida</div>
+                        </div>
+                        <div class="date-location">Aug 2026 – Present | Greater Delhi Area</div>
+                    </div>
+                    <div class="card-body">
+                        Coaching grass root level children while developing their confidence, motivation, teamwork, discipline, and communication through sports.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Executive Committee Member</div>
+                            <div class="card-subtitle">Uttar Pradesh Basketball Association (UPBA), Noida</div>
+                        </div>
+                        <div class="date-location">Jul 2026 | Galgotias University</div>
+                    </div>
+                    <div class="card-body">
+                        Supported event planning and coordination for the 24th Youth State Basketball Championship, Greater Noida (2026).
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Sports Counsellor</div>
+                            <div class="card-subtitle">Uttar Pradesh Basketball Association (UPBA), Kanpur</div>
+                        </div>
+                        <div class="date-location">Sep 2025 | CHS Gurukulam</div>
+                    </div>
+                    <div class="card-body">
+                        Provided player guidance and support during the 29th Sub-Junior Girls State Basketball Championship (2025).
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Volunteering - Mental Health Program</div>
+                            <div class="card-subtitle">Noor Manzil Psychiatric Centre, Lucknow</div>
+                        </div>
+                        <div class="date-location">Aug 2025 | Lucknow</div>
+                    </div>
+                    <div class="card-body">
+                        Completed a 20-day volunteering experience under Dr. Savri Datta, gaining practical exposure to patient interaction, behavioural observation, and psychiatric care.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">B.A, Psychology</div>
+                            <div class="card-subtitle">Galgotias University</div>
+                        </div>
+                        <div class="date-location">2025 – 2028</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Senior Secondary (XII) - Commerce</div>
+                            <div class="card-subtitle">St. Anthony's Junior College, Agra (CISCE)</div>
+                        </div>
+                        <div class="date-location">Completed 2025</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Secondary (X)</div>
+                            <div class="card-subtitle">St. Anthony's Junior College, Agra (ICSE)</div>
+                        </div>
+                        <div class="date-location">Completed 2023</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills & Certifications -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Counseling</div>
+                <div class="skill-item">Emotional Intelligence</div>
+                <div class="skill-item">Event Management</div>
+                <div class="skill-item">Conflict Management</div>
+                <div class="skill-item">Interpersonal Skills</div>
+                <div class="skill-item">Public Speaking</div>
+                <div class="skill-item">Performance Management</div>
+                <div class="skill-item">Public Relations</div>
+                <div class="skill-item">Adaptability</div>
+            </div>
+
+            <br><br>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">AI Workshop Certification</div>
+                        <div class="card-subtitle">Be10x (Virtual)</div>
+                    </div>
+                    <div class="date-location">Sep 2026</div>
+                </div>
+                <div class="card-body">
+                    Participated in a hands-on AI workshop, gaining practical exposure to AI tools, productivity techniques, and their applications in everyday and professional work.
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Extra Curriculars -->
+        <section id="achievements">
+            <h2 class="section-title">Achievements & Leadership</h2>
+            <div class="card">
+                <ul class="custom-list">
+                    <li>Represented Uttar Pradesh in the Junior National Basketball Championship (2024).</li>
+                    <li>Silver Medalist in Junior State Championship in Basketball (2025).</li>
+                    <li>Silver Medalist in 5 km Marathon (2024).</li>
+                    <li>Participated in Inter-School Basketball Championships for 3 consecutive years, securing Gold and Silver medals (2021–2024).</li>
+                    <li>Team Captain for Agra U-16 & U-19 Youth and Junior State Tournaments.</li>
+                    <li>Sports Captain at St. Anthony's Junior College (Classes 11th–12th).</li>
+                    <li>Participant & Coordinator for Mental Health Day activities at St. Anthony's Junior College.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aadya Bhadauriya. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
